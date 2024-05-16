@@ -4,6 +4,7 @@ import java.util.ArrayList;
 import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.web.bind.annotation.DeleteMapping;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -34,6 +35,12 @@ public class PersonneController {
 	@GetMapping("/getPersonneById")
 	public Optional<Personne> getPersonneById(@RequestParam long id) {
 		return personneService.getPersonneById(id);
+	}
+	
+	//localhost:8081/deletePersonneById?id=1
+	@DeleteMapping("/deletePersonneById")
+	public void deletePersonneById(@RequestParam long id){
+		personneService.deletePersonneById(id);
 	}
 	//getPersonneByID attention, on ne va pas utiliser un requestBody, mais un requestParam
 }

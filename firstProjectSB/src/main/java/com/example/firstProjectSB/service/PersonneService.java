@@ -28,4 +28,8 @@ public class PersonneService {
 	public Optional<Personne> getPersonneById(long id) {
 		return personneRepository.findById(id);
 	}
+
+	public void deletePersonneById(long id) {
+		personneRepository.deleteById(id);
+	}
 }
