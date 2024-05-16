@@ -25,6 +25,6 @@ public class PersonneController {
 	
 	@GetMapping("/getPersonnes")
 	public ArrayList<Personne> getPersonnes(){
-		return personneService.getPersonneListe();
+		return personneService.getAllPersonnes();
 	}
 }

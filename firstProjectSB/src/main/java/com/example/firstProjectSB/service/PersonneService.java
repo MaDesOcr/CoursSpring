@@ -11,7 +11,6 @@ import com.example.firstProjectSB.repository.PersonneRepository;
 @Service
 public class PersonneService {
 
-	ArrayList<Personne> personneListe = new ArrayList<Personne>();
 	
 	@Autowired
 	PersonneRepository personneRepository;
@@ -21,7 +20,7 @@ public class PersonneService {
 		return true;
 	}
 	
-	public ArrayList<Personne> getPersonneListe(){
-		return personneListe;
+	public ArrayList<Personne> getAllPersonnes(){
+		return (ArrayList<Personne>) personneRepository.findAll();
 	}
 }
