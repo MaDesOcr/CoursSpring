@@ -32,4 +32,14 @@ public class PersonneService {
 	public void deletePersonneById(long id) {
 		personneRepository.deleteById(id);
 	}
+
+	public void update(Personne personneToSave, long id) {
+		Optional<Personne> personneToUpdated = personneRepository.findById(id);
+		Personne p = personneToUpdated.get();
+		p.setBirthday(personneToSave.getBirthday());
+		p.setNom(personneToSave.getNom());
+		p.setPrenom(personneToSave.getPrenom());
+		
+		personneRepository.save(p);
+	}
 }
