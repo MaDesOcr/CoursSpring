@@ -1,6 +1,7 @@
 package com.example.firstProjectSB.service;
 
 import java.util.ArrayList;
+import java.util.Optional;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -22,5 +23,9 @@ public class PersonneService {
 	
 	public ArrayList<Personne> getAllPersonnes(){
 		return (ArrayList<Personne>) personneRepository.findAll();
+	}
+	
+	public Optional<Personne> getPersonneById(long id) {
+		return personneRepository.findById(id);
 	}
 }
